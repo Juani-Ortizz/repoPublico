@@ -763,7 +763,7 @@ DEFAULT_DAG_ARGS = {
     'project_id':client.project
 }
 with DAG('dag_pipeline', 
-    schedule_interval = '0 3 * * sun',
+    schedule_interval = '0 3 * * *',
     start_date=datetime(2022, 1, 19, 4, 00),
     end_date=None,
     carchup=False,
