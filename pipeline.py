@@ -827,147 +827,144 @@ with DAG('dag_pipeline',
         trigger_dag_id="dag_pipeline"
     )
 
-#     #APPS
-#     create_pipeline_apps = CloudDataFusionCreatePipelineOperator(
-#         location=LOCATION,
-#         pipeline_name= PIPELINE_NAME_1,
-#         pipeline=PIPELINE_1,
-#         instance_name=INSTANCE_NAME,
-#         task_id="apps"
-#     )
-#     delete_apps = BashOperator(
-#         task_id='delete_apps',
-#         bash_command=f'gsutil -m rm -f -r gs://juan-ortiz-dev-ntt/rawdata/apps/'
-#     )
-#     start_pipeline_apps = CloudDataFusionStartPipelineOperator(
-#         location=LOCATION,
-#         pipeline_name=PIPELINE_NAME_1,
-#         instance_name=INSTANCE_NAME,
-#         task_id="start_apps"
-#     )
+    #APPS
+    create_pipeline_apps = CloudDataFusionCreatePipelineOperator(
+        location=LOCATION,
+        pipeline_name= PIPELINE_NAME_1,
+        pipeline=PIPELINE_1,
+        instance_name=INSTANCE_NAME,
+        task_id="apps"
+    )
+    delete_apps = BashOperator(
+        task_id='delete_apps',
+        bash_command=f'gsutil -m rm -f -r gs://juan-ortiz-dev-ntt/rawdata/apps/'
+    )
+    start_pipeline_apps = CloudDataFusionStartPipelineOperator(
+        location=LOCATION,
+        pipeline_name=PIPELINE_NAME_1,
+        instance_name=INSTANCE_NAME,
+        task_id="start_apps"
+    )
 
-#     #APPS_CATEGORIES
-#     create_pipeline_apps_categories = CloudDataFusionCreatePipelineOperator(
-#         location=LOCATION,
-#         pipeline_name= PIPELINE_NAME_2,
-#         pipeline=PIPELINE_2,
-#         instance_name=INSTANCE_NAME,
-#         task_id="apps_categories"
-#     )
-#     delete_apps_categories =BashOperator(
-#     task_id='delete_apps_categories',
-#     bash_command=f'gsutil -m rm -r gs://juor-dev/rawdata/apps_categories/'    
-#     )
-#     start_pipeline_apps_categories = CloudDataFusionStartPipelineOperator(
-#         location=LOCATION,
-#         pipeline_name=PIPELINE_NAME_2,
-#         instance_name=INSTANCE_NAME,
-#         task_id="start_apps_categories"
-#     )
+    #APPS_CATEGORIES
+    create_pipeline_apps_categories = CloudDataFusionCreatePipelineOperator(
+        location=LOCATION,
+        pipeline_name= PIPELINE_NAME_2,
+        pipeline=PIPELINE_2,
+        instance_name=INSTANCE_NAME,
+        task_id="apps_categories"
+    )
+    delete_apps_categories =BashOperator(
+    task_id='delete_apps_categories',
+    bash_command=f'gsutil -m rm -r gs://juor-dev/rawdata/apps_categories/'    
+    )
+    start_pipeline_apps_categories = CloudDataFusionStartPipelineOperator(
+        location=LOCATION,
+        pipeline_name=PIPELINE_NAME_2,
+        instance_name=INSTANCE_NAME,
+        task_id="start_apps_categories"
+    )
 
-#     #CATEGORIES
-#     create_pipeline_categories = CloudDataFusionCreatePipelineOperator(
-#         location=LOCATION,
-#         pipeline_name= PIPELINE_NAME_3,
-#         pipeline=PIPELINE_3,
-#         instance_name=INSTANCE_NAME,
-#         task_id="categories"
-#     )
-#     delete_categories =BashOperator(
-#     task_id='delete_categories',
-#     bash_command=f'gsutil -m rm -r gs://juor-dev/rawdata/categories/'    
-#     )
-#     start_pipeline_categories = CloudDataFusionStartPipelineOperator(
-#         location=LOCATION,
-#         pipeline_name=PIPELINE_NAME_3,
-#         instance_name=INSTANCE_NAME,
-#         task_id="start_categories"
-#     )
+    #CATEGORIES
+    create_pipeline_categories = CloudDataFusionCreatePipelineOperator(
+        location=LOCATION,
+        pipeline_name= PIPELINE_NAME_3,
+        pipeline=PIPELINE_3,
+        instance_name=INSTANCE_NAME,
+        task_id="categories"
+    )
+    delete_categories =BashOperator(
+    task_id='delete_categories',
+    bash_command=f'gsutil -m rm -r gs://juor-dev/rawdata/categories/'    
+    )
+    start_pipeline_categories = CloudDataFusionStartPipelineOperator(
+        location=LOCATION,
+        pipeline_name=PIPELINE_NAME_3,
+        instance_name=INSTANCE_NAME,
+        task_id="start_categories"
+    )
 
-#     #KEY_BENEFITS
-#     create_pipeline_key_benefits = CloudDataFusionCreatePipelineOperator(
-#         location=LOCATION,
-#         pipeline_name= PIPELINE_NAME_4,
-#         pipeline=PIPELINE_4,
-#         instance_name=INSTANCE_NAME,
-#         task_id="key_benefits"
-#     )
-#     delete_key_benefits =BashOperator(
-#     task_id='delete_key_benefits',
-#     bash_command=f'gsutil -m rm -r gs://juor-dev/rawdata/key_benefits/'    
-#     )
-#     start_pipeline_key_benefits = CloudDataFusionStartPipelineOperator(
-#         location=LOCATION,
-#         pipeline_name=PIPELINE_NAME_4,
-#         instance_name=INSTANCE_NAME,
-#         task_id="start_key_benefits"
-#     )
+    #KEY_BENEFITS
+    create_pipeline_key_benefits = CloudDataFusionCreatePipelineOperator(
+        location=LOCATION,
+        pipeline_name= PIPELINE_NAME_4,
+        pipeline=PIPELINE_4,
+        instance_name=INSTANCE_NAME,
+        task_id="key_benefits"
+    )
+    delete_key_benefits =BashOperator(
+    task_id='delete_key_benefits',
+    bash_command=f'gsutil -m rm -r gs://juor-dev/rawdata/key_benefits/'    
+    )
+    start_pipeline_key_benefits = CloudDataFusionStartPipelineOperator(
+        location=LOCATION,
+        pipeline_name=PIPELINE_NAME_4,
+        instance_name=INSTANCE_NAME,
+        task_id="start_key_benefits"
+    )
 
-#     #PRICING_PLAN_FEATURES
-#     create_pipeline_pricing_plan_features = CloudDataFusionCreatePipelineOperator(
-#         location=LOCATION,
-#         pipeline_name= PIPELINE_NAME_5,
-#         pipeline=PIPELINE_5,
-#         instance_name=INSTANCE_NAME,
-#         task_id="pricing_plan_features"
-#     )
-#     delete_pricing_plan_features =BashOperator(
-#     task_id='delete_pricing_plan_features',
-#     bash_command=f'gsutil -m rm -r gs://juor-dev/rawdata/pricing_plan_features/'    
-#     )
-#     start_pipeline_pricing_plan_features = CloudDataFusionStartPipelineOperator(
-#         location=LOCATION,
-#         pipeline_name=PIPELINE_NAME_5,
-#         instance_name=INSTANCE_NAME,
-#         task_id="start_pricing_plan_features"
-#     )
+    #PRICING_PLAN_FEATURES
+    create_pipeline_pricing_plan_features = CloudDataFusionCreatePipelineOperator(
+        location=LOCATION,
+        pipeline_name= PIPELINE_NAME_5,
+        pipeline=PIPELINE_5,
+        instance_name=INSTANCE_NAME,
+        task_id="pricing_plan_features"
+    )
+    delete_pricing_plan_features =BashOperator(
+    task_id='delete_pricing_plan_features',
+    bash_command=f'gsutil -m rm -r gs://juor-dev/rawdata/pricing_plan_features/'    
+    )
+    start_pipeline_pricing_plan_features = CloudDataFusionStartPipelineOperator(
+        location=LOCATION,
+        pipeline_name=PIPELINE_NAME_5,
+        instance_name=INSTANCE_NAME,
+        task_id="start_pricing_plan_features"
+    )
 
-#     #PRICING_PLANS
-#     create_pipeline_pricing_plans = CloudDataFusionCreatePipelineOperator(
-#         location=LOCATION,
-#         pipeline_name= PIPELINE_NAME_6,
-#         pipeline=PIPELINE_6,
-#         instance_name=INSTANCE_NAME,
-#         task_id="pricing_plans"
-#     )
-#     delete_pricing_plans =BashOperator(
-#     task_id='pricing_plans',
-#     bash_command=f'gsutil -m rm -r gs://juor-dev/rawdata/pricing_plans/'    
-#     )
-#     start_pipeline_pricing_plans = CloudDataFusionStartPipelineOperator(
-#         location=LOCATION,
-#         pipeline_name=PIPELINE_NAME_6,
-#         instance_name=INSTANCE_NAME,
-#         task_id="start_pricing_plans"
-#     )
+    #PRICING_PLANS
+    create_pipeline_pricing_plans = CloudDataFusionCreatePipelineOperator(
+        location=LOCATION,
+        pipeline_name= PIPELINE_NAME_6,
+        pipeline=PIPELINE_6,
+        instance_name=INSTANCE_NAME,
+        task_id="pricing_plans"
+    )
+    delete_pricing_plans =BashOperator(
+    task_id='pricing_plans',
+    bash_command=f'gsutil -m rm -r gs://juor-dev/rawdata/pricing_plans/'    
+    )
+    start_pipeline_pricing_plans = CloudDataFusionStartPipelineOperator(
+        location=LOCATION,
+        pipeline_name=PIPELINE_NAME_6,
+        instance_name=INSTANCE_NAME,
+        task_id="start_pricing_plans"
+    )
 
-#     #REVIEWS
-#     create_pipeline_reviews = CloudDataFusionCreatePipelineOperator(
-#         location=LOCATION,
-#         pipeline_name= PIPELINE_NAME_7,
-#         pipeline=PIPELINE_7,
-#         instance_name=INSTANCE_NAME,
-#         task_id="reviews"
-#     )
-#     delete_reviews =BashOperator(
-#     task_id='delete_reviews',
-#     bash_command=f'gsutil -m rm -r gs://juor-dev/rawdata/reviews/'    
-#     )
-#     start_pipeline_reviews = CloudDataFusionStartPipelineOperator(
-#         location=LOCATION,
-#         pipeline_name=PIPELINE_NAME_7,
-#         instance_name=INSTANCE_NAME,
-#         task_id="start_reviews"
-#     )
+    #REVIEWS
+    create_pipeline_reviews = CloudDataFusionCreatePipelineOperator(
+        location=LOCATION,
+        pipeline_name= PIPELINE_NAME_7,
+        pipeline=PIPELINE_7,
+        instance_name=INSTANCE_NAME,
+        task_id="reviews"
+    )
+    delete_reviews =BashOperator(
+    task_id='delete_reviews',
+    bash_command=f'gsutil -m rm -r gs://juor-dev/rawdata/reviews/'    
+    )
+    start_pipeline_reviews = CloudDataFusionStartPipelineOperator(
+        location=LOCATION,
+        pipeline_name=PIPELINE_NAME_7,
+        instance_name=INSTANCE_NAME,
+        task_id="start_reviews"
+    )
 
 # #ARMADO DE DAG
-# inicio >> create_pipeline_apps >> delete_apps >> start_pipeline_apps >> fin
-# inicio >> create_pipeline_apps_categories >> delete_apps_categories >> start_pipeline_apps_categories >> fin
-# inicio >> create_pipeline_categories >> delete_categories >> start_pipeline_apps >> fin
-# inicio >> create_pipeline_key_benefits >> delete_key_benefits >> start_pipeline_key_benefits >> fin
-# inicio >> create_pipeline_pricing_plan_features >> delete_pricing_plan_features >> start_pipeline_pricing_plan_features >> fin
-# inicio >> create_pipeline_pricing_plans >> delete_pricing_plans >> start_pipeline_pricing_plans >> fin
-# inicio >> create_pipeline_reviews >> delete_reviews >> start_pipeline_reviews >> fin
-
-inicio >> create_cluster >> set_profile >> pipeline >> apps_process >> delete_cluster >> delete_instance >>fin
-inicio >> set_profile >> pipeline >>fin
+inicio >>create_instance >> create_cluster >>  create_pipeline_apps >> delete_apps >> start_pipeline_apps >> set_profile >> pipeline >> apps_process >> delete_cluster >> delete_instance >> fin
+inicio >>create_instance >> create_cluster >>  create_pipeline_apps_categories >> delete_apps_categories >> start_pipeline_apps_categories >> set_profile >> pipeline >> apps_process >> delete_cluster >> delete_instance >> fin
+inicio >>create_instance >> create_cluster >>  create_pipeline_categories >> delete_categories >> start_pipeline_apps >> set_profile >> pipeline >> apps_process >> delete_cluster >> delete_instance >> fin
+inicio >>create_instance >> create_cluster >> create_pipeline_key_benefits >> delete_key_benefits >> start_pipeline_key_benefits >> set_profile >> pipeline >> apps_process >> delete_cluster >> delete_instance >> fin
+inicio >>create_instance >> create_cluster >> create_pipeline_pricing_plan_features >> delete_pricing_plan_features >> start_pipeline_pricing_plan_features >> set_profile >> pipeline >> apps_process >> delete_cluster >> delete_instance >> fin
+inicio >>create_instance >> create_cluster >> create_pipeline_pricing_plans >> delete_pricing_plans >> start_pipeline_pricing_plans >> set_profile >> pipeline >> apps_process >> delete_cluster >> delete_instance >> fin
+inicio >>create_instance >> create_cluster >> create_pipeline_reviews >> delete_reviews >> start_pipeline_reviews >> set_profile >> pipeline >> apps_process >> delete_cluster >> delete_instance >> fin
